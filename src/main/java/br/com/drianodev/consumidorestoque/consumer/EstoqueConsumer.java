@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 public class EstoqueConsumer {
 
     @RabbitListener(queues = RabbitMQConstants.FILA_ESTOQUE)
-    private void consumidor(String mensagem) throws JsonProcessingException {
+    private void consumidor(String mensagem) throws JsonProcessingException, InterruptedException {
 
         System.out.println("Mensagem recebida: " + mensagem);
 
@@ -22,6 +22,8 @@ public class EstoqueConsumer {
         System.out.println(estoqueDTO.codigoProduto);
         System.out.println(estoqueDTO.quantidade);
         System.out.println("--------------------------------------------");
+
+        Thread.sleep(120000);
     }
 
 }
