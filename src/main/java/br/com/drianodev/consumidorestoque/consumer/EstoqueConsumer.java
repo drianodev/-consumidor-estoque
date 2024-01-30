@@ -23,7 +23,7 @@ public class EstoqueConsumer {
         System.out.println(estoqueDTO.quantidade);
         System.out.println("--------------------------------------------");
 
-        Thread.sleep(120000);
+
     }
 
 }
